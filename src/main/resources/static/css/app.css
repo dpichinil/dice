@@ -1,0 +1,12 @@
+.container-dice{
+    position: relative;
+}
+.img-dice{
+    width: 60px;
+    height: 60px;
+}
+.number-dice{
+    position: absolute;
+    left: 30px;
+    top: 15px;
+}

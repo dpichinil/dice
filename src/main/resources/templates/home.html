@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link rel="stylesheet" th:href="@{/static/plugins/bootstrap/css/bootstrap.css}" >
+    <link rel="stylesheet" th:href="@{/static/css/app.css}" >
+
+    <script type="text/javascript" th:src="@{/static/js/jquery-350.js}" ></script>
+    <script type="text/javascript" th:src="@{/static/js/app.js}" ></script>
+</head>
+<body class="bg-dark">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-sm-12 mb-3">
+                <div class="input-group m-2">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text" for="txtCodeGame">Codigo Juego</label>
+                    </div>
+                    <input type="password" class="form-control" id="txtCodeGame" placeholder="Codigo Juego">
+                    <div class="input-group-append">
+                        <button id="btnCreateGame" type="button" class="btn btn-primary">Crear</button>
+                        <button id="btnJoinGame" type="button" class="btn btn-secondary">Unirse</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-12 mb-3 text-center">
+                <div class="m-2">
+                    <label for="txtDificult" class="text-light mr-5">Dificultad</label>
+                    <input id="txtDificult" value="6">
+                </div>
+                <div class="m-2">
+                    <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with difficult">
+                        <div class="btn-group" role="group" aria-label="Difficult">
+                            <button type="button" class="btn btn-secondary" onclick="difficult(1)">1</button>
+                            <button type="button" class="btn btn-secondary" onclick="difficult(2)">2</button>
+                            <button type="button" class="btn btn-secondary" onclick="difficult(3)">3</button>
+                            <button type="button" class="btn btn-secondary" onclick="difficult(4)">4</button>
+                            <button type="button" class="btn btn-secondary" onclick="difficult(5)">5</button>
+                            <button type="button" class="btn btn-secondary" onclick="difficult(6)">6</button>
+                            <button type="button" class="btn btn-secondary" onclick="difficult(7)">7</button>
+                            <button type="button" class="btn btn-secondary" onclick="difficult(8)">8</button>
+                            <button type="button" class="btn btn-secondary" onclick="difficult(9)">9</button>
+                            <button type="button" class="btn btn-secondary" onclick="difficult(10)">10</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-12 mb-3 text-center">
+                <button id="btnLessFive" type="button" class="btn btn-lg btn-primary mr-2">- 5</button>
+                <button id="btnLessOne" type="button" class="btn btn-lg btn-primary mr-2">- 1</button>
+
+                <input id="txtNumberDice" type="text" class="mr-2" maxlength="2" size="2" value="0"/>
+
+                <button id="btnMoreFive" type="button" class="btn btn-lg btn-primary mr-2">+ 5</button>
+                <button id="btnMoreOne" type="button" class="btn btn-lg btn-primary mr-lg-5">+ 1</button>
+
+                <button id="btnResetNumberDice" type="button" class="btn btn-lg btn-primary mr-2">Limpiar</button>
+            </div>
+
+            <div class="col-sm-12 mb-3 text-center">
+                <button id="btnRoll" type="button" class="btn btn-lg btn-primary">ROLL</button>
+            </div>
+
+            <div class="col-sm-12 mb-3 text-center text-light">
+                <h1 id="lblResultValue">2</h1>
+                <h1 id="lblResultText">Exitos</h1>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col-sm-2">
+                <div class="col-sm-8 offset-sm-1 rounded-circle text-center" style="align-content: center; horiz-align: center; height: 50px;width: 50px">
+                    <img th:src="@{/static/img/dice_s_7.png}" class="rounded img-dice">
+                </div>
+            </div>
+            <div class="col-sm-2">
+                <div class="col-sm-8 offset-sm-1 rounded-circle text-center" >
+                    <img th:src="@{/static/img/dice_m_1.png}" class="rounded img-dice">
+                </div>
+            </div>
+            <div class="col-sm-2">
+                <div class="col-sm-8 offset-sm-1 rounded-circle text-center" >
+                    <img th:src="@{/static/img/dice_s_9.png}" class="rounded img-dice">
+                </div>
+            </div>
+            <div class="col-sm-2">
+                <div class="col-sm-8 offset-sm-1 rounded-circle text-center" >
+                    <img th:src="@{/static/img/dice_m_4.png}" class="rounded img-dice">
+                </div>
+            </div>
+            <div class="col-sm-2">
+                <div class="col-sm-8 offset-sm-1 rounded-circle text-center" >
+                    <img th:src="@{/static/img/dice_ss_10.png}" class="rounded img-dice">
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
