@@ -8,7 +8,7 @@ public class ThrowDto {
     private String key;
     private String player;
     private int resultCount;
-    private int resultText;
+    private String resultText;
     private List<Integer> listDice;
     private int difficult;
 
@@ -36,11 +36,11 @@ public class ThrowDto {
         this.resultCount = resultCount;
     }
 
-    public int getResultText() {
+    public String getResultText() {
         return resultText;
     }
 
-    public void setResultText(int resultText) {
+    public void setResultText(String resultText) {
         this.resultText = resultText;
     }
 

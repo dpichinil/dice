@@ -73,6 +73,7 @@ public class GameService {
                         list.add(num);
                     }
                     dto = evaluateGeneratedNumber(list, dto);
+
                     dto.setListDice(list);
                     game.setThrowDice(dto);
                     game.setModify(false);
@@ -222,11 +223,21 @@ public class GameService {
         logger.debug("successAux: " + successAux);
         if (faultAux < 0) {
             dto.setResultCount(faultAux);
+            dto.setResultText("FALL0");
         } else {
+            int modifier = 1;
+            if(10 != dto.getDifficult()){
+                modifier=2;
+            }
             logger.debug("agragando diferencia");
-            int total = (extraAux * 2) + successAux;
+            int total = (extraAux * modifier) + successAux;
             logger.debug("total: " + total);
             dto.setResultCount(total);
+            if(dto.getResultCount()==0){
+                dto.setResultText("PERDIDA");
+            }else{
+                dto.setResultText("EXITO");
+            }
         }
         return dto;
     }
