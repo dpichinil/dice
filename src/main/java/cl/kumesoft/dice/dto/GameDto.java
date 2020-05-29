@@ -1,4 +1,4 @@
-package cl.kumesoft.dados.dto;
+package cl.kumesoft.dice.dto;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,7 +7,7 @@ public class GameDto {
     private boolean modify;
     private String tokenCreador;
     private List<PlayerDto> listPlayers;
-    private ThrowDto throwDice;
+    private RollDto throwDice;
 
     public boolean getModify() {
         return modify;
@@ -36,11 +36,11 @@ public class GameDto {
         this.listPlayers = listPlayers;
     }
 
-    public ThrowDto getThrowDice() {
+    public RollDto getThrowDice() {
         return throwDice;
     }
 
-    public void setThrowDice(ThrowDto throwDice) {
+    public void setThrowDice(RollDto throwDice) {
         this.throwDice = throwDice;
     }
 }

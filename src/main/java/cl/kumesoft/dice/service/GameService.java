@@ -1,10 +1,10 @@
-package cl.kumesoft.dados.service;
+package cl.kumesoft.dice.service;
 
-import cl.kumesoft.dados.dto.GameDto;
-import cl.kumesoft.dados.dto.PlayerDto;
-import cl.kumesoft.dados.dto.ResponseDto;
-import cl.kumesoft.dados.util.RandomSequence;
-import cl.kumesoft.dados.dto.ThrowDto;
+import cl.kumesoft.dice.dto.GameDto;
+import cl.kumesoft.dice.dto.PlayerDto;
+import cl.kumesoft.dice.dto.ResponseDto;
+import cl.kumesoft.dice.util.RandomSequence;
+import cl.kumesoft.dice.dto.RollDto;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -20,9 +20,12 @@ public class GameService {
 
     public GameService() {
         games = new HashMap<String, GameDto>();
+        Random r = new Random();
+        int num = r.nextInt(100)+1;
+        SEQUENCE_NUMBER = num;
     }
 
-    public ResponseDto createGame(String token, ThrowDto dto) {
+    public ResponseDto createGame(String token, RollDto dto) {
         ResponseDto response = null;
         String keyGame = "";
         try {
@@ -40,7 +43,7 @@ public class GameService {
         return response;
     }
 
-    public ResponseDto joinGame(String token, ThrowDto dto) {
+    public ResponseDto joinGame(String token, RollDto dto) {
         ResponseDto response = null;
         try {
             PlayerDto player = new PlayerDto();
@@ -54,7 +57,7 @@ public class GameService {
         return response;
     }
 
-    public ResponseDto throwDice(ThrowDto dto, String token) {
+    public ResponseDto rollDice(RollDto dto, String token) {
         logger.info("================= INICIO THROW =============");
         ResponseDto response = null;
         try {
@@ -116,12 +119,12 @@ public class GameService {
         return response;
     }
 
-    public ResponseDto getThrowDice(String key, String token) {
+    public ResponseDto getRollDice(String key, String token) {
         ResponseDto response = null;
         try {
             GameDto game = (GameDto) games.get(key);
             if(findToken(game.getListPlayers(), token)){
-                ThrowDto dto = game.getThrowDice();
+                RollDto dto = game.getThrowDice();
                 response = new ResponseDto(0, "Jugada obtenida", dto);
             }else{
                 response = new ResponseDto(1001, "El usuario no se encuentra agregado al guego");
@@ -171,7 +174,7 @@ public class GameService {
     /*
     * Metod privates for games
     */
-    private ThrowDto evaluateGeneratedNumber(List<Integer> list, ThrowDto dto) {
+    private RollDto evaluateGeneratedNumber(List<Integer> list, RollDto dto) {
         int faultCount = 0, successCount = 0, extraSuccessCount = 0;
         for (Integer num : list) {
             logger.info("num: " + num);

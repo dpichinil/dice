@@ -1,8 +1,8 @@
-package cl.kumesoft.dados.controller;
+package cl.kumesoft.dice.controller;
 
-import cl.kumesoft.dados.dto.ResponseDto;
-import cl.kumesoft.dados.dto.ThrowDto;
-import cl.kumesoft.dados.service.GameService;
+import cl.kumesoft.dice.dto.ResponseDto;
+import cl.kumesoft.dice.dto.RollDto;
+import cl.kumesoft.dice.service.GameService;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -15,15 +15,15 @@ public class GameController {
         this.service = service;
     }
 
-    @PostMapping("throw/{token}")
-    public ResponseDto throwDice(@RequestBody ThrowDto dto, @PathVariable("token") String token){
-        return service.throwDice(dto, token);
+    @PostMapping("roll/{token}")
+    public ResponseDto rollDice(@RequestBody RollDto dto, @PathVariable("token") String token){
+        return service.rollDice(dto, token);
     }
 
     @GetMapping("get/{key}/{token}")
-    public ResponseDto getThrowDice(@PathVariable("key") String key,
+    public ResponseDto getRollDice(@PathVariable("key") String key,
                                     @PathVariable("token") String token){
-        return service.getThrowDice(key, token);
+        return service.getRollDice(key, token);
     }
 
     @GetMapping("remove/{key}/{token}")
@@ -40,13 +40,13 @@ public class GameController {
 
     @PostMapping("create/{token}")
     public ResponseDto createGame(@PathVariable("token") String token,
-                                  @RequestBody ThrowDto dto){
+                                  @RequestBody RollDto dto){
         return service.createGame(token, dto);
     }
 
     @PostMapping("join/{token}")
     public ResponseDto joinGame(@PathVariable("token") String token,
-                                  @RequestBody ThrowDto dto){
+                                  @RequestBody RollDto dto){
         return service.joinGame(token, dto);
     }
 }

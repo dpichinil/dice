@@ -1,13 +1,13 @@
-package cl.kumesoft.dados;
+package cl.kumesoft.dice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class DadosApplication {
+public class DiceApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(DadosApplication.class, args);
+        SpringApplication.run(DiceApplication.class, args);
     }
 
 }

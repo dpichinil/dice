@@ -1,4 +1,4 @@
-package cl.kumesoft.dados.dto;
+package cl.kumesoft.dice.dto;
 
 public class PlayerDto {
     private String token;

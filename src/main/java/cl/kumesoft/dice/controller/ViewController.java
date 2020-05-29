@@ -1,4 +1,4 @@
-package cl.kumesoft.dados.controller;
+package cl.kumesoft.dice.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

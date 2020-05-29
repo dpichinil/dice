@@ -148,7 +148,7 @@ function rollDice(){
     let jsonData = loadDataRoll();
     $.ajax({
         type:'POST',
-        url: contextRoot+"api/dice/throw/"+token,
+        url: contextRoot+"api/dice/roll/"+token,
         data: JSON.stringify(jsonData),
         contentType: 'application/json',
         success: function(result,status,xhr){

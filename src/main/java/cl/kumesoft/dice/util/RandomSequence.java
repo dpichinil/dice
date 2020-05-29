@@ -1,4 +1,4 @@
-package cl.kumesoft.dados.util;
+package cl.kumesoft.dice.util;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

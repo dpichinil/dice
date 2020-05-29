@@ -1,8 +1,8 @@
-package cl.kumesoft.dados.dto;
+package cl.kumesoft.dice.dto;
 
 import java.util.List;
 
-public class ThrowDto {
+public class RollDto {
 
     private int diceCount;
     private String key;
