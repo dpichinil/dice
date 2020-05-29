@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>index::Dados</title>
+    <script th:inline="javascript"> let contextRoot = /*[[@{/}]]*/'';</script>
+    <link rel="stylesheet" th:href="@{/static/plugins/bootstrap/css/bootstrap.css}" >
+    <link rel="stylesheet" th:href="@{/static/css/app.css}" >
+
+    <script type="text/javascript" th:src="@{/static/js/jquery-350.js}" ></script>
+    <script type="text/javascript" th:src="@{/static/js/app.js}" ></script>
+    <script type="text/javascript" th:src="@{/static/js/index.js}" ></script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4 offset-4 mb-3">
+                <div class="card text-center">
+                    <div class="card-header">
+                        <ul class="nav nav-tabs card-header-tabs">
+                            <li class="nav-item">
+                                <a id="linkCreate" class="nav-link active" href="#">Crear</a>
+                            </li>
+                            <li class="nav-item">
+                                <a id="linkJoin" class="nav-link" href="#">Unirse</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="card-body">
+                        <form id="form-create">
+                            <div class="form-group">
+                                <label for="txtName-create">Name</label>
+                                <input id="txtName-create" type="text" class="form-control"  aria-describedby="nameHelp-create">
+                                <small id="nameHelp-create" class="form-text text-muted">Ingresa tu nombre o de tu de personaje.</small>
+                            </div>
+                            <button id="btnCreateGame" type="button" class="btn btn-primary">Crear</button>
+                        </form>
+                        <form id="form-join">
+                            <div class="form-group">
+                                <label for="txtName-join">Name</label>
+                                <input id="txtName-join" type="text" class="form-control"  aria-describedby="nameHelp-join">
+                                <small id="nameHelp-join" class="form-text text-muted">Ingresa tu nombre o de tu personaje.</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="txtCodeGame-join">Codigo de juego</label>
+                                <input id="txtCodeGame-join" type="text" class="form-control" aria-describedby="codeHelp">
+                                <small id="codeHelp" class="form-text text-muted">Ingresa el codigo de la partida.</small>
+                            </div>
+                            <button id="btnJoinGame" type="button" class="btn btn-primary">Unirse</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-sm-12 mb-3 text-center">
+                    <span id="spanMessage" class="text-light">message</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>
