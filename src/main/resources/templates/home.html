@@ -3,13 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Home</title>
-    <script th:inline="javascript"> let contextRoot = /*[[@{/}]]*/'';</script>
     <link rel="stylesheet" th:href="@{/static/plugins/bootstrap/css/bootstrap.css}" >
     <link rel="stylesheet" th:href="@{/static/css/app.css}" >
 
     <script type="text/javascript" th:src="@{/static/js/jquery-350.js}" ></script>
     <script type="text/javascript" th:src="@{/static/js/app.js}" ></script>
-    <script type="text/javascript" th:src="@{/static/js/home.js}" ></script>
 </head>
 <body class="bg-dark">
     <div class="container">
@@ -20,27 +18,31 @@
                     <div class="input-group-prepend">
                         <label class="input-group-text" for="txtCodeGame">Codigo Juego</label>
                     </div>
-                    <label id="txtCodeGame" class="form-control"  ></label>
-                    <label id="txtNamePlayer" class="form-control"  ></label>
+                    <input id="txtCodeGame" type="text" class="form-control"  placeholder="Codigo Juego">
+                    <input id="txtNamePlayer" type="text" class="form-control"  placeholder="Nombre">
                     <div class="input-group-append">
+                        <button id="btnCreateGame" type="button" class="btn btn-primary">Crear</button>
+                        <button id="btnJoinGame" type="button" class="btn btn-secondary">Unirse</button>
                         <button id="btnExitGame" type="button" class="btn btn-secondary">Salir</button>
                     </div>
                 </div>
             </div>
+
             <div class="col-sm-12 mb-3 text-center">
                 <span id="spanMessage" class="text-light">message</span>
             </div>
-            <div class="col-sm-12 mb-3">
+
+            <div id="divDifficult" class="col-sm-12 mb-3 text-center">
                 <div class="m-2 text-center">
-                    <div class="col-sm-4 offset-sm-4">
-                        <label for="txtDifficult" class="text-light mr-5">Dificultad</label>
-                        <input id="txtDifficult" value="6" size="2">
-                    </div>
-                </div>
-                <div class="m-2">
-                    <div class="col-sm-4 offset-sm-4">
+                    <div class="col-sm-6 offset-3">
                         <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with difficult">
-                            <div class="btn-group" role="group" aria-label="Difficult">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text" id="btnGroupAddon">Dificultad</div>
+                                </div>
+                                <input id="txtDifficult" type="text" class="form-control" aria-label="Difficult" aria-describedby="btnGroupAddon" size="2">
+                            </div>
+                            <div class="btn-group ml-1" role="group" aria-label="Difficult">
                                 <button type="button" class="btn btn-secondary" onclick="difficult(1)">1</button>
                                 <button type="button" class="btn btn-secondary" onclick="difficult(2)">2</button>
                                 <button type="button" class="btn btn-secondary" onclick="difficult(3)">3</button>
@@ -54,11 +56,10 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
 
-            <div class="col-sm-12 mb-3 text-center">
+            <div id="divDice" class="col-sm-12 mb-3 text-center">
                 <button id="btnLessFive" type="button" class="btn btn-lg btn-primary mr-2">- 5</button>
                 <button id="btnLessOne" type="button" class="btn btn-lg btn-primary mr-2">- 1</button>
 
@@ -70,26 +71,27 @@
                 <button id="btnResetNumberDice" type="button" class="btn btn-lg btn-primary mr-2">Limpiar</button>
             </div>
 
-            <div class="col-sm-12 mb-3 text-center">
+            <div id="divRollButtons" class="col-sm-12 mb-3 text-center">
                 <button id="btnUnlockRoll" type="button" class="btn btn-lg btn-primary mr-2">Desbloquear ROLL</button>
                 <button id="btnViewRoll" type="button" class="btn btn-lg btn-primary mr-2">Ver ROLL</button>
                 <button id="btnRoll" type="button" class="btn btn-lg btn-primary mr-2">ROLL</button>
             </div>
 
-            <div class="col-sm-12 mb-3 text-center text-light">
+            <div id="divInfoRoll" class="col-sm-12 mb-3 text-center text-light">
                 <h1 class="display-2">
                     <span id="lblResultValue">2</span>
                     <span id="lblResultText">Exitos</span>
                 </h1>
-            </div>
-            <div class="col-sm-12 mb-3 text-center text-light">
+
                 <label for="lblPlayer">Jugador</label>
                 <label id="lblPlayer" class="mr-2">Daniel</label>
                 <label for="lblDifficult">Dificultad</label>
                 <label id="lblDifficult" class="mr-2">6</label>
                 <label for="lblNumberDice">Cantidad Dados</label>
                 <label id="lblNumberDice" class="mr-2">2</label>
+
             </div>
+
         </div>
     </div>
 
